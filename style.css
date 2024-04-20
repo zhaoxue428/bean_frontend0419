@@ -1,0 +1,74 @@
+/* importan */
+/* 1. 比较全局布局和 your-name 的 width: 400px;*/
+/* 2. 比较 h2 和 #your-name h2 */
+/* 全局重置 */
+* {
+  /* 外边框属性 */
+  margin: 0;
+  /* 元素内边框属性 */
+  padding: 0;
+  /* 盒子尺寸 */
+  /* 元素的宽度和高度将包含内边距和边框，而不会额外增加这些值 */
+  box-sizing: border-box;
+}
+body {
+  background-color: white;
+  /* 字体样式 */
+  font-family: Arial;
+  /* 字体大小 */
+  font-size: 20px;
+  padding: 75px;
+}
+
+h1 {
+  font-size: 35px;
+  /* 元素底部外边距属性 */
+  padding-bottom: 25px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  /* 文本对齐 */
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.first {
+  color: red;
+}
+
+#your-name {
+  background-color: rgb(162, 162, 161);
+  /* 边界 边框  十六进制颜色代码  */
+  /* https://www.sioe.cn/yingyong/yanse-rgb-16/ */
+  border: 5px solid #0000ff;
+  /* 宽度属性 */
+  width: 400px;
+  /* 内边框 */
+  padding: 25px;
+  /* 外边框 */
+  margin-top: 30px;
+}
+
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+a {
+  background-color: yellow;
+}
+
+#course-image {
+  width: 300px;
+  /* height: 300px; */
+}
+
+#your-name h2 {
+  color: olivedrab;
+}

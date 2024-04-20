@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Person</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Add a New Person</h1>
+    <form id="personForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <button type="submit">Save</button>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        $("#personForm").on("submit", function (e) {
+          e.preventDefault(); // 阻止默认表单提交行为
+          var name = $("#name").val();
+
+          // 确保姓名不为空
+          if (!name.trim()) {
+            alert("Please enter a name");
+            return;
+          }
+
+          $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/persons",
+            data: { name: name }, // 直接发送表单数据
+            success: function (response) {
+              alert("Person added successfully");
+              $("#name").val(""); // 提交成功后清空输入框
+            },
+            error: function (xhr, status, error) {
+              var errorMessage = xhr.responseJSON
+                ? xhr.responseJSON.message
+                : "Error adding person";
+              alert(errorMessage);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
